@@ -8,9 +8,9 @@ pipeline {
        //  disableConcurrentBuilds()
          ansiColor('xterm')
     }
-     parameters {
-       choice(name: 'action', choices: ['Apply', 'Destroy'], description: 'Pick something')
-     }
+    //  parameters {
+    //    choice(name: 'action', choices: ['Apply', 'Destroy'], description: 'Pick something')
+    //  }
     stages {
         stage('NPM Dependencies') { 
             steps {
