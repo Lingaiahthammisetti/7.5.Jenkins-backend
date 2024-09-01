@@ -34,10 +34,19 @@ pipeline {
                 """ 
             }
         }
+         stage('Build') { 
+            steps {
+                sh """
+                  zip -r backend-${appVersion}.zip * -x Jenkinsfile -x backend-${appVersion}.zip
+                  ls -ltr
+                  
+                """ 
+            }
+        }
     }
      post { 
         always { 
-            //deleteDir()
+            deleteDir()
             echo 'I will always say Hello Always!'
         }
         success { 
