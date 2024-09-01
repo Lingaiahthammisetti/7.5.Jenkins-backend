@@ -12,11 +12,11 @@ pipeline {
        choice(name: 'action', choices: ['Apply', 'Destroy'], description: 'Pick something')
      }
     stages {
-        stage('Test') { 
+        stage('NPM Dependencies') { 
             steps {
                 sh """
-                  echo "This is test"
-                  ls -ltr
+                  npm install
+                  
                 """ 
             }
         }
