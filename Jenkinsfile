@@ -11,7 +11,7 @@ pipeline {
     //  parameters {
     //    choice(name: 'action', choices: ['Apply', 'Destroy'], description: 'Pick something')
     //  }
-    environemnt {
+    environment {
         def appVersion = '' //variable declaration here.
     }
     stages {
