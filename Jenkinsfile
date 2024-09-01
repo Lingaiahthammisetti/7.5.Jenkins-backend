@@ -11,12 +11,25 @@ pipeline {
     //  parameters {
     //    choice(name: 'action', choices: ['Apply', 'Destroy'], description: 'Pick something')
     //  }
+    environemnt {
+        def appVersion = '' //variable declaration here.
+    }
     stages {
+        stage('read the version') {
+            steps {
+                script {
+                def packageJson = readJSON file: 'package.json'
+                appVersion = packageJson.version
+                echo "application version: $appVersion"
+            }
+            }
+        }
         stage('NPM Dependencies') { 
             steps {
                 sh """
                   npm install
                   ls -ltr
+                  echo "application version: $appVersion"
                   
                 """ 
             }
