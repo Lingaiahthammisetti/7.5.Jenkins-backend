@@ -13,7 +13,7 @@ pipeline {
     //  }
     environment {
         def appVersion = '' //variable declaration here.
-        nexusURl = '3.84.31.186:8081'
+        nexusURl = '35.175.249.131:8081'
 
  
     }
